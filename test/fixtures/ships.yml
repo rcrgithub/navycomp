@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shipping_company: one
+  ship_name: MyString
+  city_location: MyString
+  country_location: MyString
+  status_ship: false
+
+two:
+  shipping_company: two
+  ship_name: MyString
+  city_location: MyString
+  country_location: MyString
+  status_ship: false

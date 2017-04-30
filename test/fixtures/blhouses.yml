@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nvoccs_customer: one
+  blmaster: one
+
+two:
+  nvoccs_customer: two
+  blmaster: two

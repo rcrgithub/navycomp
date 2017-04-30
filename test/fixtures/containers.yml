@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shipping_company: one
+  container_code: MyString
+  container_type: MyString
+  city_location: MyString
+  country_location: MyString
+  status_container: false
+
+two:
+  shipping_company: two
+  container_code: MyString
+  container_type: MyString
+  city_location: MyString
+  country_location: MyString
+  status_container: false
