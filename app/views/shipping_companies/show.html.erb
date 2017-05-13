@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+
+<h1>Shipping Company Data</h1>
+<p>
+  <strong>Name:</strong>
+  <%= @shipping_company.shipping_comp_name %>
+</p>
+<p>
+  <strong>id:</strong>
+  <%= @shipping_company.id  %>
+</p>
+
+<p>
+  <strong>city_id:</strong>
+  <%= @shipping_company.city_id  %>
+</p>
+
+<p>
+  <%  b=City.find(@shipping_company.city_id) %>
+  <strong>city_name:</strong>
+  <%= b.city_name  %>
+</p>
+<p>
+  <strong>country_id:</strong>
+  <%= b.country_id  %>
+</p>
+
+<p>
+  <%  c=Country.find(b.country_id) %>
+  <strong>country_name:</strong>
+  <%= c.country_name  %>
+</p>
+
+
+
+<p>
+  <sidtrong>Tax-id-vat:</strong>
+  <%= @shipping_company.tax_id_vat %>
+</p>
+
+
+<p>
+  <strong>Address:</strong>
+  <%= @shipping_company.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @shipping_company.phone %>
+</p>
+
+
+<p>
+  <strong>Email:</strong>
+  <%= @shipping_company.email %>
+</p>
+
+<p>
+  <strong>website:</strong>
+  <%= @shipping_company.website %>
+</p>
+<p>
+  <strong>Status-Company:</strong>
+  <%= @shipping_company.status_company %>
+</p>
+
+
+<%= link_to 'Edit', edit_shipping_company_path(@shipping_company) %> |
+<%= link_to 'Back', shipping_companies_path %>

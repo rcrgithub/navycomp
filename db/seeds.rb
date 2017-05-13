@@ -137,25 +137,25 @@ b = Customer.find(3)
 a.nvoccs_customers.create(customer: b)
 
 a = City.find(3)
-ShippingCompany.create shipping_comp_name: 'Maersk', city: a
+ShippingCompany.create shipping_comp_name: 'Maersk', status_company: 'TRUE', city: a
 a = City.find(2)
-ShippingCompany.create shipping_comp_name: 'Mediterranean Shipping CO.', city: a
+ShippingCompany.create shipping_comp_name: 'Mediterranean Shipping CO.', status_company: 'TRUE', city: a
 a = City.find(1)
-ShippingCompany.create shipping_comp_name: 'CMA CGM', city: a
+ShippingCompany.create shipping_comp_name: 'CMA CGM', status_company: 'TRUE', city: a
 a = City.find(10)
-ShippingCompany.create shipping_comp_name: 'American President', city: a
+ShippingCompany.create shipping_comp_name: 'American President', status_company: 'FALSE', city: a
 a = City.find(8)
-ShippingCompany.create shipping_comp_name: 'Happag LLoyd', city: a
+ShippingCompany.create shipping_comp_name: 'Happag LLoyd', status_company: 'TRUE', city: a
 a = City.find(13)
-ShippingCompany.create shipping_comp_name: 'Evergreen Line', city: a
+ShippingCompany.create shipping_comp_name: 'Evergreen Line', status_company: 'TRUE', city: a
 a = City.find(4)
-ShippingCompany.create shipping_comp_name: 'Cosco', city: a
+ShippingCompany.create shipping_comp_name: 'Cosco', status_company: 'TRUE', city: a
 a = City.find(3)
-ShippingCompany.create shipping_comp_name: 'China Shipping CO.', city: a
+ShippingCompany.create shipping_comp_name: 'China Shipping CO.', status_company: 'TRUE', city: a
 a = City.find(1)
-ShippingCompany.create shipping_comp_name: 'Hanjin Shipping', city: a
+ShippingCompany.create shipping_comp_name: 'Hanjin Shipping', status_company: 'FALSE', city: a
 a = City.find(14)
-ShippingCompany.create shipping_comp_name: 'Mitzui OSK', city: a
+ShippingCompany.create shipping_comp_name: 'Mitzui OSK', status_company: 'TRUE', city: a
 
 a = ShippingCompany.find(3)
 Ship.create ship_name: 'MSC Oscar', shipping_company: a

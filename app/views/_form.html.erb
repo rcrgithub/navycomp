@@ -1,0 +1,59 @@
+<%= form_for @shipping_company do |f| %>
+
+<% if @shipping_company.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@shipping_company.errors.count, "error") %> prohibited
+        this shipping_company from being saved:
+      </h2>
+      <ul>
+        <% @shipping_company.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :Name %><br>
+    <%= f.text_field :shipping_comp_name %>
+      </p>
+
+   <p>
+    <%= f.label :id %><br>
+    <%= f.integer_field :id %>
+      </p>
+    
+
+      <p>
+        <%= f.label :Tax-id %><br>
+        <%= f.text_field :tax_id_vat %>
+      </p>
+     <p>
+        <%= f.label :Address %><br>
+        <%= f.text_area :address %>
+        </p>
+
+ <p>
+   <%= f.label :Phone %><br>
+   <%= f.text_field :phone %>
+ </p>
+<p>
+   <%= f.label :Email %><br>
+   <%= f.text_field :email %>
+ </p>
+ <p>
+   <%= f.label :Website %><br>
+   <%= f.text_field :website %>
+ </p>
+<p>
+   <%= f.label :Status Company %><br>
+   <%= f.text_field :status_company %>
+ </p>
+
+<p>
+   <%= f.submit %>
+ </p>
+
+<% end %>
+

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Shipping Companies</h1>
+
+<table>
+  <thead>
+    <tr>
+    <th>Name</th>
+    <th>Tax-id</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Website</th>
+    <th>Status</th>
+     <th colspan="7"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shipping_companies.each do |shipping_company| %>
+      <tr>
+       <td><%= shipping_company.shipping_comp_name %></td>
+       <td><%= shipping_company.tax_id_vat %></td>
+       <td><%= shipping_company.address %></td>
+       <td><%= shipping_company.phone %></td>
+       <td><%= shipping_company.email %></td>
+       <td><%= shipping_company.website %></td>
+       <td><%= shipping_company.status_company %></td>
+        <td><%= link_to 'Show', shipping_company %></td>
+        <td><%= link_to 'Edit', edit_shipping_company_path(shipping_company) %></td>
+        <td><%= link_to 'Destroy', shipping_company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shipping Company', new_shipping_company_path %>
