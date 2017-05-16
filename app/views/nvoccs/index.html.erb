@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Nvoccs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Tax-id</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Website</th>
+      <th>Status</th>
+       <th colspan="7"></th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nvoccs.each do |nvocc| %>
+      <tr>
+        <td><%= nvocc.nvocc_name %></td>
+        <td><%= nvocc.tax_id_vat %></td>
+        <td><%= nvocc.address %></td>
+        <td><%= nvocc.phone %></td>
+        <td><%= nvocc.email %></td>
+        <td><%= nvocc.website %></td>
+        <td><%= nvocc.status_nvocc %></td>
+        <td><%= link_to 'Show', nvocc %></td>
+        <td><%= link_to 'Edit', edit_nvocc_path(nvocc) %></td>
+        <td><%= link_to 'Destroy', nvocc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Nvocc', new_nvocc_path %><br><br>
+<%= link_to 'Home Navy System', wellcome_index_path %>

@@ -1,0 +1,52 @@
+<%= form_for(nvocc) do |f| %>
+  <% if nvocc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(nvocc.errors.count, "error") %> prohibited this nvocc from being saved:</h2>
+
+      <ul>
+      <% nvocc.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :Name %><br>
+    <%= f.text_field :nvocc_name %>
+      </p>
+
+      <p>
+        <%= f.label :Tax_id_vat %><br>
+        <%= f.text_field :tax_id_vat %>
+      </p>
+
+      <p>
+        <%= f.label :City_id %><br>
+        <%= f.text_field :city_id %>
+
+      </p>
+     <p>
+        <%= f.label :Address %><br>
+        <%= f.text_area :address %>
+        </p>
+
+  <p>
+   <%= f.label :Phone %><br>
+   <%= f.text_field :phone %>
+  </p>
+  <p>
+   <%= f.label :Email %><br>
+   <%= f.text_field :email %>
+  </p>
+  <p>
+   <%= f.label :Website %><br>
+   <%= f.text_field :website %>
+  </p>
+  <p>
+   <%= f.label :status_nvocc %><br>
+   <%= f.text_field :status_nvocc %>
+  </p>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

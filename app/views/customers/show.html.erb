@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+<h1>CUSTOMER DATA</h1>
+<p>
+  <strong>Name:</strong>
+  <%= @customer.customer_name %>
+</p>
+<p>
+  <strong>id:</strong>
+  <%= @customer.id  %>
+</p>
+
+<p>
+  <strong>city_id:</strong>
+  <%= @customer.city_id  %>
+</p>
+
+<p>
+  <%  city=City.find(@customer.city_id) %>
+  <strong>city_name:</strong>
+  <%= city.city_name  %>
+</p>
+<p>
+  <strong>country_id:</strong>
+  <%= city.country_id  %>
+</p>
+
+<p>
+  <%  country=Country.find(city.country_id) %>
+  <strong>country_name:</strong>
+  <%= country.country_name  %>
+</p>
+
+
+
+<p>
+  <strong>IDENT_CARD:</strong>
+  <%= @customer.ident_card %>
+</p>
+
+
+<p>
+  <strong>Address:</strong>
+  <%= @customer.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @customer.phone %>
+</p>
+
+
+<
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>

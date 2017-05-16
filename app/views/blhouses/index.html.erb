@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Blhouses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blhouses.each do |blhouse| %>
+      <tr>
+        <td><%= link_to 'Show', blhouse %></td>
+        <td><%= link_to 'Edit', edit_blhouse_path(blhouse) %></td>
+        <td><%= link_to 'Destroy', blhouse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Blhouse', new_blhouse_path %>

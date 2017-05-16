@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Blmasters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blmasters.each do |blmaster| %>
+      <tr>
+        <td><%= link_to 'Show', blmaster %></td>
+        <td><%= link_to 'Edit', edit_blmaster_path(blmaster) %></td>
+        <td><%= link_to 'Destroy', blmaster, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Blmaster', new_blmaster_path %>

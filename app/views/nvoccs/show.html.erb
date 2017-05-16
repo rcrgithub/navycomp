@@ -1,23 +1,21 @@
 <p id="notice"><%= notice %></p>
-
-
-<h1>Shipping Company Data</h1>
+<h1>NVOCC Data</h1>
 <p>
   <strong>Name:</strong>
-  <%= @shipping_company.shipping_comp_name %>
+  <%= @nvocc.nvocc_name %>
 </p>
 <p>
   <strong>id:</strong>
-  <%= @shipping_company.id  %>
+  <%= @nvocc.id  %>
 </p>
 
 <p>
   <strong>city_id:</strong>
-  <%= @shipping_company.city_id  %>
+  <%= @nvocc.city_id  %>
 </p>
 
 <p>
-  <%  city=City.find(@shipping_company.city_id) %>
+  <%  city=City.find(@nvocc.city_id) %>
   <strong>city_name:</strong>
   <%= city.city_name  %>
 </p>
@@ -36,35 +34,35 @@
 
 <p>
   <strong>Tax-id-vat:</strong>
-  <%= @shipping_company.tax_id_vat %>
+  <%= @nvocc.tax_id_vat %>
 </p>
 
 
 <p>
   <strong>Address:</strong>
-  <%= @shipping_company.address %>
+  <%= @nvocc.address %>
 </p>
 
 <p>
   <strong>Phone:</strong>
-  <%= @shipping_company.phone %>
+  <%= @nvocc.phone %>
 </p>
 
 
 <p>
   <strong>Email:</strong>
-  <%= @shipping_company.email %>
+  <%= @nvocc.email %>
 </p>
 
 <p>
   <strong>website:</strong>
-  <%= @shipping_company.website %>
+  <%= @nvocc.website %>
 </p>
 <p>
   <strong>Status-Company:</strong>
-  <%= @shipping_company.status_company %>
+  <%= @nvocc.status_nvocc %>
 </p>
 
 
-<%= link_to 'Edit', edit_shipping_company_path(@shipping_company) %> |
-<%= link_to 'Back', shipping_companies_path %>
+<%= link_to 'Edit', edit_nvocc_path(@nvocc) %> |
+<%= link_to 'Back', nvoccs_path %>

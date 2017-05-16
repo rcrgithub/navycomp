@@ -1,4 +1,4 @@
-
+GNU nano 2.5.3                                           File: _form.html.erb
 
 <%= form_for @shipping_company do |f| %>
 
@@ -22,14 +22,8 @@
     </p>
 
     <p>
-      <%= f.label :Tax_id_vat %><br>
+      <%= f.label :Tax-id %><br>
       <%= f.text_field :tax_id_vat %>
-    </p>
-
-    <p>
-      <%= f.label :City_id %><br>
-      <%= f.text_field :city_id %>
-    
     </p>
    <p>
       <%= f.label :Address %><br>
@@ -49,9 +43,10 @@
  <%= f.text_field :website %>
 </p>
 <p>
- <%= f.label :status_company %><br>
+ <%= f.label :Status Company %><br>
  <%= f.text_field :status_company %>
-</p>
+ </p>
+
  <p>
     <%= f.submit %>
   </p>
