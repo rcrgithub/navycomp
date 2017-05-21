@@ -1,70 +1,71 @@
 <p id="notice"><%= notice %></p>
 
+<%= csrf_meta_tags %>
+<h3>Shipping Company Data</h3>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<br><br>
+<div class="container-fluid">
+  <div class="row"><br><br>
+    <div class="col-xs-3" style="background-color:red;"><div align=center>Name</div></div>
+    <div class="col-xs-3" style="background-color:lime;"><div align=center>Tax-id</div></div>
+    <div class="col-xs-3" style="background-color:gold;"><div align=center>Address</div></div>
+    <div class="col-xs-3" style="background-color:lime;"><div align=center>Phone</div></div>
 
-<h1>Shipping Company Data</h1>
-<p>
-  <strong>Name:</strong>
-  <%= @shipping_company.shipping_comp_name %>
-</p>
-<p>
-  <strong>id:</strong>
-  <%= @shipping_company.id  %>
-</p>
+  </div>
 
-<p>
-  <strong>city_id:</strong>
-  <%= @shipping_company.city_id  %>
-</p>
+    <div class="row"><br><br>
+      <div class="col-xs-3" style="background-color:lavender;"><div align=center><%= @shipping_company.shipping_comp_name %></div></div>
+      <div class="col-xs-3" style="background-color:lavender;"><div align=center><%= @shipping_company.tax_id_vat %></div></div>
+      <div class="col-xs-3" style="background-color:lavender;"><div align=center><%= @shipping_company.address %></div></div>
+      <div class="col-xs-3" style="background-color:lavender;"><div align=center><%= @shipping_company.phone %></div></div>
+    </div>
+  </div>
+  <br><br>
+      <div class="container-fluid">
 
-<p>
-  <%  city=City.find(@shipping_company.city_id) %>
-  <strong>city_name:</strong>
-  <%= city.city_name  %>
-</p>
-<p>
-  <strong>country_id:</strong>
-  <%= city.country_id  %>
-</p>
+        <div class="row"><br><br>
 
-<p>
-  <%  country=Country.find(city.country_id) %>
-  <strong>country_name:</strong>
-  <%= country.country_name  %>
-</p>
+      <div class="col-xs-3" style="background-color:lime;"><div align=center>Email</div></div>
+      <div class="col-xs-3" style="background-color:gold;"><div align=center>Website</div></div>
+      <div class="col-xs-3" style="background-color:lime;"><div align=center>Status</div></div>
+      <div class="col-xs-3" style="background-color:gold;"><div align=center>City_id</div></div>
+    </div>
+    <div class="row"><br><br>
 
+      <div class="col-xs-3" style="background-color:lavender;"><div align=center><%= @shipping_company.email %></div></div>
+      <div class="col-xs-3" style="background-color:lavender;"><div align=center><%= @shipping_company.website %></div></div>
+      <div class="col-xs-3" style="background-color:lavender;"><div align=center><%= @shipping_company.status_company %></div></div>
+      <div class="col-xs-3" style="background-color:lavender;"><div align=center><%= @shipping_company.city_id  %></div></div>
+   </div>
+ </div>
 
+<br><br>
 
-<p>
-  <strong>Tax-id-vat:</strong>
-  <%= @shipping_company.tax_id_vat %>
-</p>
+    <div class="container-fluid">
 
+      <div class="row"><br><br>
 
-<p>
-  <strong>Address:</strong>
-  <%= @shipping_company.address %>
-</p>
+    <div class="col-xs-4" style="background-color:lime;"><div align=center>City_Name</div></div>
+    <div class="col-xs-4" style="background-color:gold;"><div align=center>Country_id</div></div>
+    <div class="col-xs-4" style="background-color:lime;"><div align=center>Country_Name</div></div>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @shipping_company.phone %>
-</p>
+  </div>
+  <div class="row"><br><br>
+<%  city=City.find(@shipping_company.city_id) %>
+<%  country=Country.find(city.country_id) %>
+    <div class="col-xs-4" style="background-color:lavender;"><div align=center><%= city.city_name  %></div></div>
+    <div class="col-xs-4" style="background-color:lavender;"><div align=center><%= city.country_id  %></div></div>
+    <div class="col-xs-4" style="background-color:lavender;"><div align=center><%= country.country_name  %></div></div>
+ </div>
+</div>
 
-
-<p>
-  <strong>Email:</strong>
-  <%= @shipping_company.email %>
-</p>
-
-<p>
-  <strong>website:</strong>
-  <%= @shipping_company.website %>
-</p>
-<p>
-  <strong>Status-Company:</strong>
-  <%= @shipping_company.status_company %>
-</p>
+<br><br>
 
 
-<%= link_to 'Edit', edit_shipping_company_path(@shipping_company) %> |
-<%= link_to 'Back', shipping_companies_path %>
+<div align=center><%= button_to '    EDIT    ', edit_shipping_company_path(@shipping_company), method: :get, style: "background: steelblue" %></div><br><br>
+<div align=center><%= button_to '    BACK    ', shipping_companies_path, style: "background: gold", method: :get %></div>

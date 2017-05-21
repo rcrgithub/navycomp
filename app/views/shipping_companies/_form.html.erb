@@ -1,5 +1,3 @@
-
-
 <%= form_for @shipping_company do |f| %>
 
 <% if @shipping_company.errors.any? %>
@@ -15,45 +13,50 @@
     </ul>
   </div>
 <% end %>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <br><br>
+  <div class="container-fluid">
+    <div class="row"><br><br>
+      <div class="col-xs-3" style="background-color:red;"><div align=center>Name</div></div>
+      <div class="col-xs-3" style="background-color:lime;"><div align=center>Tax-id</div></div>
+      <div class="col-xs-3" style="background-color:gold;"><div align=center>Address</div></div>
+      <div class="col-xs-3" style="background-color:lime;"><div align=center>Phone</div></div>
 
-<p>
-  <%= f.label :Name %><br>
-  <%= f.text_field :shipping_comp_name %>
-    </p>
+    </div>
 
-    <p>
-      <%= f.label :Tax_id_vat %><br>
-      <%= f.text_field :tax_id_vat %>
-    </p>
+      <div class="row"><br><br>
+        <div class="col-xs-3" style="background-color:lavender;"><div align=center><%= f.text_field :shipping_comp_name %></div></div>
+        <div class="col-xs-3" style="background-color:lavender;"><div align=center><%= f.text_field :tax_id_vat %></div></div>
+        <div class="col-xs-3" style="background-color:lavender;"><div align=center><%= f.text_area :address %></div></div>
+        <div class="col-xs-3" style="background-color:lavender;"><div align=center><%= f.text_field :phone %></div></div>
+      </div>
+    </div>
+    <br><br><br><br>
+        <div class="container-fluid">
 
-    <p>
-      <%= f.label :City_id %><br>
-      <%= f.text_field :city_id %>
-    
-    </p>
-   <p>
-      <%= f.label :Address %><br>
-      <%= f.text_area :address %>
-      </p>
+          <div class="row"><br><br>
 
-<p>
- <%= f.label :Phone %><br>
- <%= f.text_field :phone %>
-</p>
-<p>
- <%= f.label :Email %><br>
- <%= f.text_field :email %>
-</p>
-<p>
- <%= f.label :Website %><br>
- <%= f.text_field :website %>
-</p>
-<p>
- <%= f.label :status_company %><br>
- <%= f.text_field :status_company %>
-</p>
- <p>
-    <%= f.submit %>
-  </p>
+        <div class="col-xs-3" style="background-color:lime;"><div align=center>Email</div></div>
+        <div class="col-xs-3" style="background-color:gold;"><div align=center>Website</div></div>
+        <div class="col-xs-3" style="background-color:lime;"><div align=center>Status</div></div>
+        <div class="col-xs-3" style="background-color:gold;"><div align=center>City_id</div></div>
+      </div>
+      <div class="row"><br><br>
 
- <% end %>
+        <div class="col-xs-3" style="background-color:lavender;"><div align=center><%= f.text_field :email %></div></div>
+        <div class="col-xs-3" style="background-color:lavender;"><div align=center><%= f.text_field :website %></div></div>
+        <div class="col-xs-3" style="background-color:lavender;"><div align=center><%= f.text_field :status_company %></div></div>
+        <div class="col-xs-3" style="background-color:lavender;"><div align=center><%= f.text_field :city_id %></div></div>
+     </div>
+   </div>
+
+<br><br><br>
+  <div class="actions" style="color:navy;"><div align=center>
+    <%=   f.submit   %>
+  </div></div>
+  <% end %>

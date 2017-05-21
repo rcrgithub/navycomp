@@ -1,10 +1,52 @@
 <p id="notice"><%= notice %></p>
-
+<%= csrf_meta_tags %>
 <h1>Shipping Companies</h1>
-
-<table>
-  <thead>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-1" style="background-color:red;">ID</div>
+    <div class="col-xs-2" style="background-color:lime;">Name</div>
+    <div class="col-xs-1" style="background-color:gold;">Tax-id</div>
+    <div class="col-xs-3" style="background-color:lime;">Address</div>
+    <div class="col-xs-1" style="background-color:gold;">Phone</div>
+    <div class="col-xs-1" style="background-color:lime;">Email</div>
+    <div class="col-xs-1" style="background-color:gold;">Website</div>
+    <div class="col-xs-1" style="background-color:lime;">Status</div>
+    <div class="col-xs-1" style="background-color:gold;">Opcion</div>
+</div>
+    <% @shipping_companies.order(:id).each do |shipping_company| %>
+    <div class="row">
+      <div class="col-xs-1" style="background-color:lavender;"><%= shipping_company.id %></div>
+      <div class="col-xs-2" style="background-color:lavender;"><%= shipping_company.shipping_comp_name %></div>
+      <div class="col-xs-1" style="background-color:lavender;"><%= shipping_company.tax_id_vat %></div>
+      <div class="col-xs-3" style="background-color:lavender;"><%= shipping_company.address %></div>
+      <div class="col-xs-1" style="background-color:lavender;"><%= shipping_company.phone %></div>
+      <div class="col-xs-1" style="background-color:lavender;"><%= shipping_company.email %></div>
+      <div class="col-xs-1" style="background-color:lavender;"><%= shipping_company.website %></div>
+      <div class="col-xs-1" style="background-color:lavender;"><%= shipping_company.status_company %></div>
+      <div class="col-xs-1" style="background-color:lavender;"><div class="dropdown">
+   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   <span style="color:darkorange">Elija Opcion </span>
+   </button>
+   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+   <a class="dropdown-item" href="/shipping_companies/<%= shipping_company.id %>",method: :get><span style="color:green">Show</span></a>
+   <a class="dropdown-item" href="/shipping_companies/<%= shipping_company.id %>/edit", method: :get><span style="color:blue">Edit</span></a>
+   <a class="dropdown-item" href="/shipping_companies/<%= shipping_company.id %>", method: :delete, data: { confirm: 'Are you sure?' }><span style="color:red">Destroy</span></a>
+   </div>
+   </div></div>
+  </div>
+    <% end %>
+  </div>
+<!-- <div class="table-responsive">
+<table class="table">
+  <thead class="thead-inverse">
     <tr>
+      <th>Id</th>
     <th>Name</th>
     <th>Tax-id</th>
     <th>Address</th>
@@ -12,13 +54,14 @@
     <th>Email</th>
     <th>Website</th>
     <th>Status</th>
-     <th colspan="7"></th>
+     <th colspan="8"></th>
    </tr>
   </thead>
 
   <tbody>
     <% @shipping_companies.each do |shipping_company| %>
       <tr>
+        <td><%= shipping_company.id %></td>
        <td><%= shipping_company.shipping_comp_name %></td>
        <td><%= shipping_company.tax_id_vat %></td>
        <td><%= shipping_company.address %></td>
@@ -26,15 +69,26 @@
        <td><%= shipping_company.email %></td>
        <td><%= shipping_company.website %></td>
        <td><%= shipping_company.status_company %></td>
-        <td><%= link_to 'Show', shipping_company %></td>
-        <td><%= link_to 'Edit', edit_shipping_company_path(shipping_company) %></td>
-        <td><%= link_to 'Destroy', shipping_company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+       <td><div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span style="color:darkorange">Elija Opcion </span>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="/shipping_companies/<%= shipping_company.id %>",method: :get><span style="color:green">Show</span></a>
+    <a class="dropdown-item" href="/shipping_companies/<%= shipping_company.id %>/edit", method: :get><span style="color:blue">Edit</span></a>
+    <a class="dropdown-item" href="/shipping_companies/<%= shipping_company.id %>", method: :delete, data: { confirm: 'Are you sure?' }><span style="color:red">Destroy</span></a>
+  </div>
+</div></td> -->
+        <!-- <td><%= button_to 'Show', shipping_company, style: "background: greenyellow", method: :get %></td>
+        # <td><%= button_to 'Edit', edit_shipping_company_path(shipping_company), method: :get, style: "background: steelblue" %></td>
+        # <td><%= button_to 'Destroy', shipping_company, style: "background: coral", method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+      <!-- </tr> -->
+    <!-- <% end %>
+  </tr>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Shipping Company', new_shipping_company_path %><br><br>
-<%= link_to 'Home Navy System', wellcome_index_path %>
+</div>
+<br> -->
+<br><br>
+<div align=center><%= button_to '  New Shipping Company  ', new_shipping_company_path, style: "background: coral", method: :get %></div><br>
+<div align=center><%= button_to '  Home Navy System  ', wellcome_index_path, method: :get, style: "background: steelblue" %></div>

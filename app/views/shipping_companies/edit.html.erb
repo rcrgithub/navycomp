@@ -1,6 +1,6 @@
-<h1>Editing Shipping Company</h1>
+<h3>Editing Shipping Company</h3>
 
 <%= render 'form', shipping_company: @shipping_company %>
 
-<%= link_to 'Show', @shipping_company %> |
-<%= link_to 'Back', shipping_companies_path %>
+<div align=center><%= button_to '    Show    ', @shipping_company, style: "background: green", method: :get %></div><br>
+<div align=center><%= button_to '    Back    ', shipping_companies_path, style: "background: gold", method: :get %></div>

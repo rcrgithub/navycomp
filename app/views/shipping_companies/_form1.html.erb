@@ -1,5 +1,5 @@
-GNU nano 2.5.3                                           File: _form.html.erb
 
+<%= csrf_meta_tags %>
 <%= form_for @shipping_company do |f| %>
 
 <% if @shipping_company.errors.any? %>
@@ -15,38 +15,45 @@ GNU nano 2.5.3                                           File: _form.html.erb
     </ul>
   </div>
 <% end %>
+  <h5><br>
+    <div align=left>
+  <%= f.label :Name %>
+  <%= f.text_field :shipping_comp_name %><br>
 
-<p>
-  <%= f.label :Name %><br>
-  <%= f.text_field :shipping_comp_name %>
-    </p>
 
-    <p>
-      <%= f.label :Tax-id %><br>
-      <%= f.text_field :tax_id_vat %>
-    </p>
-   <p>
-      <%= f.label :Address %><br>
-      <%= f.text_area :address %>
-      </p>
 
-<p>
- <%= f.label :Phone %><br>
- <%= f.text_field :phone %>
-</p>
-<p>
- <%= f.label :Email %><br>
+      <%= f.label :Tax_id_vat %>
+      <%= f.text_field :tax_id_vat %><br>
+
+
+
+      <%= f.label :City_id %>
+      <%= f.text_field :city_id %><br>
+    </div></h5>
+
+    <h5>
+      <div align=center>
+      <%= f.label :Address %>
+      <%= f.text_area :address %><br>
+
+
+
+ <%= f.label :Phone %>
+ <%= f.text_field :phone %><br>
+
+
+ <%= f.label :Email %>
  <%= f.text_field :email %>
-</p>
+</div></h5>
+
 <p>
- <%= f.label :Website %><br>
+ <%= f.label :Website %>
  <%= f.text_field :website %>
 </p>
 <p>
- <%= f.label :Status Company %><br>
+ <%= f.label :status_company %>
  <%= f.text_field :status_company %>
- </p>
-
+</p>
  <p>
     <%= f.submit %>
   </p>

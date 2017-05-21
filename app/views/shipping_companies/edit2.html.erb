@@ -1,0 +1,60 @@
+<%= form_for @shipping_company do |f| %>
+
+<% if @shipping_company.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@shipping_company.errors.count, "error") %> prohibited
+      this shipping_company from being saved:
+    </h2>
+    <ul>
+      <% @shipping_company.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <div class="container-fluid">
+    <div class="row"><br><br>
+      <div class="col-xs-3" style="background-color:red;">Name</div>
+      <div class="col-xs-3" style="background-color:lime;">>Tax-id</div>
+      <div class="col-xs-3" style="background-color:gold;">Address</div>
+      <div class="col-xs-3" style="background-color:lime;">Phone</div>
+
+    </div>
+
+      <div class="row"><br><br>
+        <div class="col-xs-3" style="background-color:lavender;"><%= f.text_field :shipping_comp_name %></div>
+        <div class="col-xs-3" style="background-color:lavender;"><%= f.text_field :tax_id_vat %></div>
+        <div class="col-xs-3" style="background-color:lavender;"><%= f.text_area :address %></div>
+        <div class="col-xs-3" style="background-color:lavender;"><%= f.text_field :phone %></div>
+      </div>
+    </div>
+        <div class="container-fluid">
+          <div class="row"><br><br><br>
+
+        <div class="col-xs-4" style="background-color:lime;">Email</div>
+        <div class="col-xs-4" style="background-color:gold;">Website</div>
+        <div class="col-xs-4" style="background-color:lime;">Status</div>
+      </div>
+      <div class="row"><br><br>
+
+        <div class="col-xs-4" style="background-color:lavender;"><%= f.text_field :email %></div>
+        <div class="col-xs-4" style="background-color:lavender;"><%= f.text_field :website %></div>
+        <div class="col-xs-4" style="background-color:lavender;"><%= f.text_field :status_company %></div>
+
+     </div>
+   </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <% end %>
+  <%= button_to 'Show', @shipping_company, style: "background: green", method: :get %><br>
+  <%= button_to 'Back', shipping_companies_path, style: "background: gold", method: :get %>

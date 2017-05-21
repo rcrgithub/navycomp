@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<%= csrf_meta_tags %>
+<h1>Shipping Company Data</h1>
+<p>
+  <strong>Name:</strong>
+  <%= @shipping_company.shipping_comp_name %>
+</p>
+<p>
+  <strong>id:</strong>
+  <%= @shipping_company.id  %>
+</p>
+
+<p>
+  <strong>city_id:</strong>
+  <%= @shipping_company.city_id  %>
+</p>
+
+<p>
+  <%  city=City.find(@shipping_company.city_id) %>
+  <strong>city_name:</strong>
+  <%= city.city_name  %>
+</p>
+<p>
+  <strong>country_id:</strong>
+  <%= city.country_id  %>
+</p>
+
+<p>
+  <%  country=Country.find(city.country_id) %>
+  <strong>country_name:</strong>
+  <%= country.country_name  %>
+</p>
+
+
+
+<p>
+  <strong>Tax-id-vat:</strong>
+  <%= @shipping_company.tax_id_vat %>
+</p>
+
+
+<p>
+  <strong>Address:</strong>
+  <%= @shipping_company.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @shipping_company.phone %>
+</p>
+
+
+<p>
+  <strong>Email:</strong>
+  <%= @shipping_company.email %>
+</p>
+
+<p>
+  <strong>website:</strong>
+  <%= @shipping_company.website %>
+</p>
+<p>
+  <strong>Status-Company:</strong>
+  <%= @shipping_company.status_company %>
+</p>
+
+<div align=center><%= button_to 'EDIT', edit_shipping_company_path(@shipping_company), method: :get, style: "background: steelblue" %></div><br><br>
+<div align=center><%= button_to 'BACK', shipping_companies_path, style: "background: gold", method: :get %></div>
